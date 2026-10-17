@@ -1,0 +1,21 @@
+{
+	"name": "bloodborne-pc-library",
+	"version": "1.0.0",
+	"private": true,
+	"type": "module",
+	"main": "./frontend/index.tsx",
+	"scripts": {
+		"build": "millennium-ttc --build prod",
+		"dev": "millennium-ttc --build dev",
+		"typecheck": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@steambrew/client": "^5.8.5"
+	},
+	"devDependencies": {
+		"@steambrew/ttc": "^3.3.7",
+		"@types/react": "^19.1.12",
+		"@types/react-dom": "^19.1.9",
+		"typescript": "^5.9.3"
+	}
+}
