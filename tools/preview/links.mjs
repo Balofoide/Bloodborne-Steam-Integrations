@@ -1,0 +1,20 @@
+// Links bar: renders above the columns and each link does its job.
+import path from "node:path"
+import { chromium } from "playwright"
+const out = path.join(path.dirname(new URL(import.meta.url).pathname), "out")
+const browser = await chromium.launch({ executablePath: `${process.env.HOME}/.cache/ms-playwright/chromium-1234/chrome-linux64/chrome`, args: ["--allow-file-access-from-files"] })
+const page = await browser.newPage({ viewport: { width: 1640, height: 1000 } })
+page.on("pageerror", (e) => console.log("PAGEERROR:", e.message))
+await page.goto(`file://${out}/page.html#ready`)
+await page.waitForTimeout(3500)
+await page.evaluate(() => document.querySelectorAll('[data-bbpc="setup"]').forEach((e) => e.remove()))
+const bar = page.locator('[data-bbpc="links"]')
+console.log("labels:", JSON.stringify(await bar.locator('[role="link"]').allInnerTexts()))
+const box = await bar.boundingBox()
+await page.screenshot({ path: `${out}/links.png`, clip: { x: 0, y: box.y - 90, width: 1640, height: box.height + 200 } })
+for (const label of ["Página do projeto", "Explorar arquivos locais", "Pasta de saves"]) await bar.locator(`text=${label}`).click()
+await bar.locator("text=Ver as últimas notícias").click()
+await page.waitForTimeout(800)
+console.log("calls:", JSON.stringify(await page.evaluate(() => window.__steamCalls.filter((c) => /Open/.test(c[0])))))
+console.log("event viewer open:", await page.locator('[data-bbpc="event"]').count(), "| 'Ver as últimas notícias' left in feed:", await page.locator('[data-bbpc="feed"] >> text=Ver as últimas notícias').count())
+await browser.close()

@@ -1,2 +1,38 @@
+# Dependencies
 node_modules/
+
+# Millennium build output
 .millennium/
+
+# Other generated build and preview output
+/build/
+/dist/
+tools/preview/out/
+
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Local credentials and environment files
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.local
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Local logs and editor/OS files
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+
+# Third-party source dumps and local reference material (not required to build)
+tools/reference/
+
+# Extracted Steam client data used only by developer regeneration/preview tools
+tools/steam-classes.json
+tools/steam-strings.json

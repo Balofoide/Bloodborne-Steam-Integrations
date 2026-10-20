@@ -1,9 +1,9 @@
 {
 	"$schema": "https://raw.githubusercontent.com/SteamClientHomebrew/Millennium/main/src/system/plugin-schema.json",
-	"name": "bloodborne-pc-library",
-	"common_name": "Bloodborne PC · Biblioteca",
-	"description": "Mostra os troféus locais do BloodBorneButPc (shadPS4) como conquistas e as atualizações do projeto na página do atalho não-Steam.",
-	"version": "1.0.0",
+	"name": "bloodborne-steam-library",
+	"common_name": "Bloodborne Library",
+	"description": "Brings local Bloodborne trophies, playtime, and Lantern Engine updates to the Steam library page for non-Steam shortcuts.",
+	"version": "1.7.7",
 	"useBackend": true,
 	"backendType": "lua"
 }

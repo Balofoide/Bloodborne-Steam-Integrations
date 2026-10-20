@@ -1,0 +1,7 @@
+{
+  "name": "bbpc-preview",
+  "private": true,
+  "type": "module",
+  "description": "Renders the plugin frontend in headless Chromium against Steam's real sp.css (dev only).",
+  "dependencies": { "react": "19.1.1", "react-dom": "19.1.1", "playwright": "1.57.0" }
+}

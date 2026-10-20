@@ -1,0 +1,141 @@
+{
+ "layout": [
+  "SpotlightBreakToLeftColumn",
+  "LeftColumn",
+  "RightColumn",
+  "SeekTarget"
+ ],
+ "section": [
+  "AppDetailsSection",
+  "AppDetailsSectionContainer",
+  "BodyGutter",
+  "RightColumnSection"
+ ],
+ "header": [
+  "SectionHeader",
+  "PadLeft",
+  "ShowBoxed",
+  "LabelText"
+ ],
+ "reset": [
+  "Reset"
+ ],
+ "ach": [
+  "AchievementHoverContainer",
+  "RightAchievementSection",
+  "RemainderText",
+  "TopSectionAchievementIcon"
+ ],
+ "achIcon": [
+  "AchievementIconWrapper",
+  "RareAchievementIconGlow",
+  "HiddenLabel"
+ ],
+ "hover": [
+  "AppDetailsHover",
+  "BlurContainer"
+ ],
+ "row": [
+  "ItemWrapper",
+  "InnerContainer"
+ ],
+ "button": [
+  "AppDetailsButton",
+  "BottomRight",
+  "MoreVisible"
+ ],
+ "feed": [
+  "ActivityAchievementUnlocked",
+  "AppActivityDay",
+  "PartnerEventLargeImage_Container",
+  "EventHeadline"
+ ],
+ "feedRoot": [
+  "ActivityFeedContainer",
+  "FetchMoreContainer",
+  "ViewLastNews"
+ ],
+ "avatar": [
+  "avatarHolder",
+  "avatarStatus",
+  "avatarFrame"
+ ],
+ "playbar": [
+  "PlayBarDetailLabel",
+  "GameStatsSection",
+  "MiniAchievements",
+  "AchievementProgressRow"
+ ],
+ "achList": [
+  "AchievementListItemBase",
+  "AchievementTitle",
+  "UnlockDate",
+  "ListTitle",
+  "SpoilerWarning",
+  "ComparisonAchieverColumn"
+ ],
+ "library": [
+  "AchievementsOverlayContainer",
+  "AchievementsPageContainer",
+  "CloseButton",
+  "LibraryContextMenu"
+ ],
+ "events": [
+  "AppPartnerEventsPage",
+  "AppPartnerEventsBody",
+  "ControlSectionRightSide",
+  "EventTypeAndTimeRow"
+ ],
+ "eventDetail": [
+  "EventDetailsPageContainer",
+  "LibraryEventTitleContainer",
+  "LibraryEventBodyContainer",
+  "InLibraryView"
+ ],
+ "bb": [
+  "Header1",
+  "Paragraph",
+  "ListItem",
+  "CodeBlock",
+  "ExpandSectionBlock"
+ ],
+ "achPage": [
+  "MyAchievementsHeader",
+  "HeaderContainer",
+  "PerfectGame",
+  "AchievementTabs"
+ ],
+ "achHeader": [
+  "StatsBlock",
+  "BigStat",
+  "StatLabelAndValue",
+  "AchievementSearchHeader"
+ ],
+ "tabs": [
+  "GamepadTabbedPage",
+  "TabHeaderRowWrapper",
+  "TabRowTabs",
+  "TabContentsScroll"
+ ],
+ "progress": [
+  "ProgressBar",
+  "Percent",
+  "Indeterminate",
+  "ProgressBarFieldStatus"
+ ],
+ "field": [
+  "Field",
+  "FieldLabel",
+  "FieldDescription",
+  "FieldChildrenInner",
+  "WithBottomSeparatorStandard",
+  "Classic"
+ ],
+ "links": [
+  "LinksSection",
+  "LinksSectionBody",
+  "LinkInner",
+  "Anchor",
+  "ForcedCarouselPadding"
+ ]
+}

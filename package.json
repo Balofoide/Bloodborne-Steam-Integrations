@@ -1,11 +1,12 @@
 {
-	"name": "bloodborne-pc-library",
-	"version": "1.0.0",
+	"name": "bloodborne-steam-library",
+	"version": "1.7.4",
+	"license": "ICU",
 	"private": true,
 	"type": "module",
 	"main": "./frontend/index.tsx",
 	"scripts": {
-		"build": "millennium-ttc --build prod",
+		"build": "millennium-ttc --build prod && node tools/check-bundle.mjs",
 		"dev": "millennium-ttc --build dev",
 		"typecheck": "tsc --noEmit"
 	},

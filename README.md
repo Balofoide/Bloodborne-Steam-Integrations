@@ -1,39 +1,52 @@
-# Bloodborne PC · Biblioteca (plugin Millennium)
+# Bloodborne PC Library
 
-Faz a página do atalho não-Steam do **BloodBorneButPc** parecer a de um jogo oficial:
+A Millennium plugin that brings local Bloodborne PC trophies, playtime, and Lantern Engine release updates to the Steam library page for non-Steam shortcuts.
 
-- **Conquistas**: os troféus locais do shadPS4 aparecem com progresso, ícones, raridade (platina/ouro/prata/bronze), troféus ocultos e uma lista completa, em pt-BR quando o Steam está em português.
-- **Barra do jogo**: "CONQUISTAS 22/40" ao lado de *Tempo de jogo*.
-- **Atividade · Atualizações**: as notas de versão do GitHub do projeto, mais os troféus desbloqueados, por data. Avisa quando há versão nova em relação à instalada.
-- Esconde o quadro tracejado "informações indisponíveis por ser um jogo não Steam".
+![Bloodborne PC Library preview](docs/preview.png)
 
-Tudo é **local**. Nada é enviado à Steam, e as conquistas não aparecem no seu perfil público.
+## Features
 
-![prévia](docs/preview.png)
+- Shows trophy progress, rarity, hidden trophies, icons, and unlock activity.
+- Adds playtime and trophy progress to the library page.
+- Displays Lantern Engine releases and highlights updates newer than the installed game version.
+- Optionally downloads Steam artwork from SteamGridDB and applies it to the non-Steam shortcut.
+- Supports English and Brazilian Portuguese, using Steam's interface language where available.
 
-## Instalação
+## Requirements
 
-1. Instale o [Millennium](https://steambrew.app) (feche o Steam e rode o instalador).
-2. Nesta pasta, rode `npm install` e depois `npm run build`. (O `.millennium/Dist/index.js` já vem compilado; só refaça o build se mudar o código.)
-3. Com o Steam fechado, rode `install.cmd`.
-4. Abra o Steam, vá em **Millennium › Plugins**, ative **Bloodborne PC · Biblioteca** e reinicie quando ele pedir.
+- Steam with [Millennium](https://steambrew.app) installed.
+- A Bloodborne Port installation with trophy data from [Lantern Engine](https://github.com/Awakenchan/LanternEngine) or shadPS4.
+- A Steam non-Steam shortcut that points to the game's folder.
 
-O plugin acha a pasta do jogo sozinho, pelo `StartDir`/`Exe` do atalho no `shortcuts.vdf`. Ela precisa conter `user/trophy`.
-Ele funciona com qualquer atalho que aponte para uma pasta do shadPS4 com troféus. A seção de atualizações só aparece para o Bloodborne PC.
+The plugin reads the shortcut's executable and working directory to locate the game data. Trophy progress appears after the game has created its trophy files.
 
-## De onde vêm os dados
+## Build from source
 
-| O quê | Arquivo |
-|---|---|
-| Desbloqueios e datas | `user/home/<perfil>/trophy/NPWR05818_00.xml`: usa o perfil com mais troféus |
-| Nomes traduzidos | `user/trophy/NPWR05818_00/Xml/TROP_17.XML` (pt-BR) |
-| Ícones | `user/trophy/NPWR05818_00/Icons/TROPxxx.PNG` |
-| Versão instalada | `package.json` da pasta do jogo |
-| Atualizações | `api.github.com/repos/Awakenchan/BloodBorneButPc/releases` (cache de 10 min) |
+Install Node.js, then run:
 
-A página se atualiza sozinha a cada ~8 s. Um troféu desbloqueado com o Steam aberto aparece sem precisar recarregar.
+```sh
+npm ci
+npm run build
+```
 
-## Se algo não aparecer
+The Millennium compiler writes the frontend bundle to `.millennium/Dist/`. Build output, dependency folders, local credentials, and development reference dumps are excluded from Git.
 
-Os nomes de classe CSS do Steam mudam a cada atualização do cliente. O plugin os resolve pelos módulos do próprio Steam e usa hashes conhecidos (outubro de 2026) como reserva.
-Se uma atualização do Steam quebrar a injeção, abra o console do Millennium e procure linhas `[bloodborne-pc]`. Os seletores ficam em `frontend/dom.ts`.
+## Privacy
+
+Trophy, save, profile, and playtime data are read from the local game installation. Trophy data is not uploaded to Steam or the plugin author, and these trophies do not appear as Steam achievements on a public profile.
+
+The plugin requests Lantern Engine release information from GitHub. SteamGridDB artwork is optional: if enabled, the user's API key is stored in Steam's local storage and sent to SteamGridDB for artwork requests. It is not required for trophy tracking.
+
+## Development
+
+The `tools/` directory contains build helpers and local development utilities. The preview utility depends on the installed Steam client and local game data; generated preview output and locally extracted Steam data are ignored.
+
+## Disclaimer
+
+This is an unofficial community plugin. Bloodborne and related names and artwork belong to their respective owners. This project is not affiliated with or endorsed by Sony Interactive Entertainment, FromSoftware, Valve, Millennium, Lantern Engine, or shadPS4.
+
+## License and forks
+
+This project is available under the [ICU License](LICENSE), which permits forks and modifications, provides an "as is" warranty disclaimer and liability limitation, and restricts promotional use of copyright holders' names without permission. We ask independent forks to use a distinct project name, identify their maintainers, and make clear that they are not endorsed by this project. The license does not grant rights to Bloodborne, Steam, or third-party artwork.
+
+Created as a community project to make the Bloodborne PC library page feel less empty.
